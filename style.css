@@ -135,10 +135,8 @@ label {
 }
 
 .select-group {
-  display: flex;
-  width: 41vw;
-  gap: 2.15vw;
-  align-items: center
+  display: inline-flex;
+  justify-content: space-between;
 }
 
 #btn {
@@ -192,3 +190,4 @@ tr:hover {
 .resultados{
   display:block
 }
+
