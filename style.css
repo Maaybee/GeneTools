@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bungee+Inline&display=swap');
+
+html { 
+    background-color: #F3F3F3;
+    margin: 0;
+    padding: 0;
+}
+
+#row-itens{ 
+    display: flex;
+    flex-direction: row;
+}
+
+#col-itens{
+    display: flex;
+    flex-direction: column;
+}
+
+#simulador {
+  display: flex;
+  flex-direction: column;
+  gap: 3.61vh;
+  /* Use max-width em vez de width fixo para permitir mais flexibilidade */
+  max-width: 46.46vw;
+  /* Deixe a largura se ajustar, se necessário */
+  width: auto; 
+  height: 89.06vh;
+  background-color: #FFFFFF;
+  border-radius: 2.74vw;
+  box-shadow: 0px 8px 80px 0px rgba(0, 0, 0, 0.25);
+  margin: 3.03vh 3.03vw;
+  /* Adicione padding lateral para espaçamento interno */
+  padding: 0 5.97vw;
+}
+h1 { 
+    font-family: 'Bungee Inline';
+    font-size: 2.29vw;
+    font-weight: 400;
+    line-height: 4.69vh;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #000000;
+}
+
+label { 
+    font-family: 'Blinker';
+    font-size: 1.54vw;
+    font-weight: 400;
+    line-height: 3.03vh;
+    letter-spacing: 0em;
+    text-align: start;
+    color: #000000;
+}
+
+#alinhar { 
+    display: flex;
+    flex-direction: column;
+    gap: 1.54vh;
+}
+
+.custom-select {
+  position: relative;
+  font-family: 'Blinker';
+  font-size: 1.74vw;
+  
+}
+
+.selected-option {
+  border: none;
+  height: 6.35vh;
+  padding: 0.98vh 0.69vw;
+  border-radius: 2.74vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background: #F3F3F3;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+
+}
+
+
+.selected-option img {
+  width: 3.92vw;
+  height: 5.10vh;
+  flex-shrink: 0;
+  padding-left: 3.98vh;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 110%;
+  left: 0;
+  border: 1px solid #ccc;
+  border-radius: 2.74vw;
+  background: #F3F3F3;
+  z-index: 10;
+  border: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 0.74vw;
+  gap: 3.98vh;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #dbdada;
+  border-radius: 1.74vw;
+
+}
+
+.option img {
+  width: 3.92vw;
+  height: 5.10vh;
+  flex-shrink: 0;
+  padding-left: 3.98vh;
+}
+
+.selected-option .arrow {
+    width: 1.67vw;
+    color: #666;
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.selected-option span {
+  white-space: nowrap;
+  padding-left: 3.98vh;
+}
+
+.select-group {
+  display: flex;
+  width: 41vw;
+  gap: 2.15vw;
+  align-items: center
+}
+
+#btn {
+  display: block;
+  width: 42vw;
+  height: 8.35vh;
+  background-color: #F252C0;
+  border: none;
+  border-radius: 2.74vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Blinker';
+  font-size: 25px;
+  color: white;
+}
+
+#btn:hover {
+  background-color: #b62789;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 17px 25px;
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+tr:hover {
+  background-color: #f1f1f1;
+}
+#table_alelo { 
+    background-color: #d8d8d8;
+}
+
+.tableImg { 
+  width: 40px;
+  height: 40px;
+}
+
+.resultados{
+  display:block
+}
