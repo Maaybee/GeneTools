@@ -1,61 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bungee+Inline&display=swap');
 
 html { 
-    background-color: #F3F3F3;
-    margin: 0;
-    padding: 0;
+  background-color: #F3F3F3;
+  margin: 0;
+  padding: 0;
 }
 
-#row-itens{ 
-    display: flex;
-    flex-direction: row;
+header { 
+  background-color: green;
+  width: 100vw;
+  height: 50px;
 }
 
-#col-itens{
-    display: flex;
-    flex-direction: column;
+/* Container das colunas */
+#row-itens {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+/* Coluna esquerda */
+#col-itens {
+  height: 100vh;          /* altura da viewport */
+  box-sizing: border-box; /* padding incluso na altura */
+  padding: 10px;     
+  flex:1;     /* opcional, só para espaçamento interno */
+}
+
+
+/* Coluna direita rolável */
+#explicação {
+  flex: 2;
+  height: auto;
+  min-height: 100vh;
+  background-color: #fff;
+  overflow: auto;
+  min-width: 30vw;
 }
 
 #simulador {
+  position: sticky;
+  top: 0;
   display: flex;
   flex-direction: column;
   gap: 3.61vh;
   /* Use max-width em vez de width fixo para permitir mais flexibilidade */
   max-width: 45.46vw;
   /* Deixe a largura se ajustar, se necessário */
-  width: auto; 
+  width: 40vw; 
   height: 100.06vh;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-radius: 2.74vw;
   box-shadow: 0px 8px 80px 0px rgba(0, 0, 0, 0.25);
   margin: 3.03vh 3.03vw;
   /* Adicione padding lateral para espaçamento interno */
   padding: 0 5.97vw;
 }
+
+/* Coluna direita */
+#explicação {
+  flex: 2;                     /* ocupa mais espaço que a esquerda */
+  min-width: 400px;            /* largura mínima */
+  max-width: 70vw;             /* largura máxima */
+  height: auto;
+  min-height: 100vh;
+  background-color: #F3F3F3;
+  overflow-y: auto;            /* permite rolagem vertical */
+  padding: 2vh 2vw;            /* espaçamento interno */
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;                    /* espaço entre os passos */
+}
+
+/* Cada passo */
+#explicação > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  width: 100%;
+}
+
+.blocos { 
+  width: 100%;                /* ocupa toda a largura do passo */
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+
+
 h1 { 
-    font-family: 'Bungee Inline';
-    font-size: 2.29vw;
-    font-weight: 400;
-    line-height: 4.69vh;
-    letter-spacing: 0em;
-    text-align: center;
-    color: #000000;
+  font-family: 'Bungee Inline';
+  font-size: 2.29vw;
+  font-weight: 400;
+  line-height: 4.69vh;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000000;
 }
 
 label { 
-    font-family: 'Blinker';
-    font-size: 1.54vw;
-    font-weight: 400;
-    line-height: 3.03vh;
-    letter-spacing: 0em;
-    text-align: start;
-    color: #000000;
+  font-family: 'Blinker';
+  font-size: 1.54vw;
+  font-weight: 400;
+  line-height: 3.03vh;
+  letter-spacing: 0em;
+  text-align: start;
+  color: #000000;
 }
 
 #alinhar { 
-    display: flex;
-    flex-direction: column;
-    gap: 1.54vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.54vh;
 }
 
 .custom-select {
@@ -80,6 +141,36 @@ label {
 
 }
 
+.selected-option-cor{
+  border: none;
+  height: 6.35vh;
+  padding: 0.98vh 1.39vw;
+  border-radius: 2.74vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #F3F3F3;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  flex-shrink: 0;
+  gap: 2vw;
+
+}
+
+.selected-option-cor .label {
+  /* Isso fará com que qualquer texto que exceda o espaço disponível seja cortado, 
+  mantendo a largura do contêiner estável. */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Adiciona '...' no final do texto cortado */
+  max-width: 8vw; /* Limita a largura do label */
+}
+
+#select_cor1 .options,
+#select_cor2 .options {
+  width: 100%; /* Garante que a lista de opções tenha a mesma largura fixa do pai */
+}
 
 .selected-option img {
   width: 3.92vw;
@@ -119,20 +210,37 @@ label {
   width: 3.92vw;
   height: 5.10vh;
   flex-shrink: 0;
-  padding-left: 3.98vh;
+  padding-left: 1.98vh;
+}
+
+.selected-option-cor .arrow {
+  width: 1.67vw;
+  color: #666;
+  margin-left: auto;
+  transition: transform 0.3s ease;
 }
 
 .selected-option .arrow {
-    width: 1.67vw;
-    color: #666;
-    margin-left: auto;
-    transition: transform 0.3s ease;
+  width: 1.67vw;
+  color: #666;
+  margin-left: auto;
+  transition: transform 0.3s ease;
 }
 
 .selected-option span {
   white-space: nowrap;
   padding-left: 3.98vh;
 }
+
+#select_cor1, 
+#select_cor2 {
+    /* Ajuste o valor '18vw' ou '150px' conforme o tamanho ideal para seu layout. 
+       O 'vw' é bom para responsividade. */
+    width: 19vw; 
+    /* Ou, se preferir uma largura mínima para evitar quebras: */
+    /* min-width: 150px; */ 
+}
+
 
 .select-group {
   display: inline-flex;
@@ -141,7 +249,7 @@ label {
 
 #btn {
   display: block;
-  width: 46vw;
+  width: auto;
   height: 10.35vh;
   background-color: #F252C0;
   border: none;
@@ -158,34 +266,130 @@ label {
   background-color: #b62789;
 }
 
+/* ---------- Tabela ------------ */
+
+.table {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 
 table {
-  border-collapse: collapse;
-  width: 90%;
-  font-family: Arial, sans-serif;
+  width: 34.79vw;
+  height: 33.1vh;
+  border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-spacing: 0;           /* remove espaço entre células */
+  overflow: hidden;
 }
 
-th, td {
-  border: 1px solid #ddd;
+td {
   padding: 17px 25px;
   text-align: center;
+  border: 1px solid #080000;   /* borda interna */
 }
-tr:nth-child(even) {
-  background-color: #f9f9f9;
+
+
+/* arredonda apenas os cantos externos */
+table tr:first-child td:first-child {
+  border-top-left-radius: 15px;
 }
-tr:hover {
-  background-color: #f1f1f1;
+table tr:first-child td:last-child {
+  border-top-right-radius: 15px;
 }
-#table_alelo { 
-    background-color: #d8d8d8;
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
 }
 
 .tableImg { 
-  width: 40px;
-  height: 40px;
+  width: 10vw;
+  height: 10vh;
+  cursor: pointer; 
+  position: relative;
 }
 
 .resultados{
   display:block
 }
+
+p { 
+  font-size: 1.5em;
+  color: #666;
+}
+
+/* Texto de instrução */
+.instruction-text {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+  font-style: italic;
+  text-align: center;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  bottom: -25px; /* abaixo da imagem */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.tableImgWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tableImgWrapper:hover .tooltip {
+  visibility: visible;
+}z
+
+h2 { 
+  font-family: 'Blinker';
+  font-size: 0.4rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: start;
+  color: #000000;
+}
+
+.btns-explicacao { 
+  width: 100%;
+  height: 8.35vh;
+  background-color: #F252C0;
+  border: none;
+  border-radius: 2.74vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Blinker';
+  font-size: 1.5rem;
+  color: white;
+}
+
+.div-blocos { 
+  display: flex;
+  justify-content: center;
+}
+
+#div_btns { 
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 1rem; 
+}
+
+#explicação > #div_btns {
+  flex-direction: row;
+}
+
