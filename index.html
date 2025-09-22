@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header> 
+    </header>
     <div id="row-itens">
         <div id="col-itens"> 
             <div id="simulador"> 
@@ -38,7 +40,7 @@
                 <label for="select_variacao"> Escolha as cores/Alelos:</label>
                 <div class="select-group"> 
                     <div class="custom-select" id="select_cor1"> 
-                        <div class="selected-option" class="selects_cor">
+                        <div class="selected-option-cor" class="selects_cor">
                             <img src="assets/yellow.svg" alt="Amarelo" />
                             <span class="label"> Amarelo </span>
                             <img src="assets/arrow.svg" class="arrow">
@@ -60,7 +62,7 @@
                     </div>
 
                     <div class="custom-select" id="select_cor2"> 
-                        <div class="selected-option" class="selects_cor">
+                        <div class="selected-option-cor" class="selects_cor">
                             <img src="assets/yellow.svg" alt="Amarelo" />
                             <span class="label"> Amarelo </span>
                             <img src="assets/arrow.svg" class="arrow">
@@ -84,28 +86,39 @@
 
                 <button id="btn">Combinar</button>
 
-                <div class="table"> 
+                <div class="table static-table"> 
                     <table>
                         <tr>
-                            <th id="table_alelo">Alelos</th>
-                            <th></th>
-                            <th></th>
-                        </tr>
-                        <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td></td>
                             <td></td>
                             <td></td>
                         </tr>
                     </table>
                 </div> 
-
             </div> 
         </div> 
+        <div id="explicação"> 
+
+            <h1> EXPLICAÇÃO </h1>
+
+            <div class="bloco-explicacao"> 
+                <h2> 1º Passo</h2>
+                <div class="blocos"> 
+                    <div id="passo1"> 
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div_btns"> 
+                <button id="btn-prox" class="btns-explicacao"> Próximo passo </button>
+            </div>
+
+        </div>
+        
     </div>
 </body>
 <script src="script.js"></script>
