@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bungee+Inline&display=swap');
+
+body { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F3F3F3;
+    height: 100%;
+}
+
+h1 { 
+    font-family: 'Bungee Inline';
+    font-size: 3rem;
+    margin: 2em 0;
+
+}
+
+.row-itens { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.col-itens { 
+    display: flex;
+    flex-direction: column;
+}
+
+#container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 30px;
+    width: 85.28vw;
+    height: 69.43vh;
+    gap: 7.74vh;
+    box-shadow: 4px 4px 80px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+
+#btnProxQuestao { 
+    border-radius: 30em;
+    border: none;
+    background-color: #70A1E2;
+    color: black;
+    font-family: 'Blinker';
+    width: 36.74vw;
+    height: 6.54vh;
+    font-size: 2rem;
+    font-family: 'Blinker';
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#btnProxQuestao:hover {
+  background-color: #5179ad;
+  border-radius: 1.74vw;
+
+}
+
+#content { 
+    display: flex;
+    align-items: center;
+}
+
+#pergunta { 
+    font-family: 'Blinker';
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.alternativas { 
+    font-family: 'Blinker';
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    margin-left: 40px;
+}
+
+.bolinha_alternativa { 
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    font-family: 'Blinker';
+    background-color: #F3F3F3;
+    border-radius: 100vh;
+    width: 3.47vw;
+    height: 4.88vh;
+    cursor: pointer;
+}
+
+.bolinha_alternativa:hover {
+  background-color: #dbdada;
+  border-radius: 1.74vw;
+
+}
+
+.blocoAlt { 
+    gap: 21.1vw;
+}
+
+#barra-progresso{ 
+    font-size: 7rem;
+    width: 24.86vw;
+    height: 5.66vh;
+    background-color: white;
+    border-radius: 50em;
+    overflow: hidden;
+}
+
+#value { 
+    width: 0%;
+    height: 100%;
+    background-color: #FFD470;
+    border-radius: 50em;
+    transition: width 0.5s ease-in-out;
+}
+
+.barra { 
+    justify-content: space-between;
+}
+
+.alternativa-selecionada {
+    background-color: darkgray;
+}
+        
+.alternativa-correta {
+    background-color: green;
+    color: white;
+}
+
+.alternativa-errada {
+    background-color: red;
+    color: white;
+}
+
+.correta {
+    background-color: green;
+    color: white;
+}
+
+.errada {
+    background-color: red;
+    color: white;
+}
