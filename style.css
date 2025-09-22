@@ -7,9 +7,9 @@ html {
 }
 
 header { 
-  background-color: green;
-  width: 100vw;
-  height: 50px;
+  display: flex;
+  margin: 0; 
+  justify-content: center;
 }
 
 /* Container das colunas */
@@ -366,7 +366,7 @@ h2 {
 .btns-explicacao { 
   width: 100%;
   height: 8.35vh;
-  background-color: #F252C0;
+  background-color: #70A1E2;
   border: none;
   border-radius: 2.74vw;
   font-weight: bold;
@@ -375,6 +375,11 @@ h2 {
   font-family: 'Blinker';
   font-size: 1.5rem;
   color: white;
+  position: relative;
+  bottom: 0;
+}
+.btns-explicacao:hover { 
+  background-color: #5179ad;
 }
 
 .div-blocos { 
