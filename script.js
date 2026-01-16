@@ -63,20 +63,24 @@ document.addEventListener("DOMContentLoaded", () => {
   let btnAnterior = document.getElementById("btn-ant");
   let btnProxElem = document.getElementById("btn-prox");
 
-  if (!btnProxElem && divBtns) {
-    btnProxElem = document.createElement("button");
-    btnProxElem.id = "btn-prox";
-    btnProxElem.textContent = "Próximo passo";
-    divBtns.appendChild(btnProxElem);
-  }
 
   if (!btnAnterior && divBtns) {
     btnAnterior = document.createElement("button");
     btnAnterior.id = "btn-ant";
-    btnAnterior.textContent = "Passo anterior";
+    // Corrigido: O texto deve ser "Passo Anterior" ou similar
+    btnAnterior.textContent = "Passo Anterior"; 
     btnAnterior.classList.add("btns-explicacao");
     btnAnterior.style.display = "none";
-    divBtns.appendChild(btnAnterior);
+    // ANEXA ANTERIOR PRIMEIRO (Fica à esquerda)
+    divBtns.appendChild(btnAnterior); 
+  }
+
+  if (!btnProxElem && divBtns) {
+    btnProxElem = document.createElement("button");
+    btnProxElem.id = "btn-prox";
+    btnProxElem.textContent = "Próximo passo";
+    // ANEXA PRÓXIMO DEPOIS (Fica à direita)
+    divBtns.appendChild(btnProxElem); 
   }
 
   if (btnProxElem) btnProxElem.disabled = true;
@@ -107,9 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
     bloco.className = "dynamic-step bloco-explicacao";
     bloco.dataset.step = String(stepIndex);
 
-    const h2 = document.createElement("h2");
+    const h2 = document.createElement("h2"); 
     h2.textContent = `${stepIndex + 1}º Passo`;
     bloco.appendChild(h2);
+
 
     const inner = document.createElement("div");
     inner.className = "blocos";
@@ -227,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCombinar = document.getElementById("btn");
   if (btnCombinar) {
     btnCombinar.addEventListener("click", () => {
+
       const animal = document.querySelector("#animal-select .selected-option").dataset.selectedValue;
       const corPai = document.querySelector("#select_cor1 .selected-option-cor").dataset.selectedValue;
       const corMae = document.querySelector("#select_cor2 .selected-option-cor").dataset.selectedValue;
@@ -262,6 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       combinado = true;
+      
       resetDynamicSteps();
       passoAtual = 0;
 
@@ -278,6 +285,9 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>Um <b>alelo dominante (A)</b> se manifesta mesmo que esteja presente apenas uma vez (Aa), enquanto um <b>alelo recessivo (a)</b> só se manifesta quando duplicado (aa).</p>
           <p>Este passo é fundamental para entender como as combinações de alelos influenciam o <b>genótipo</b> e, consequentemente, o <b>fenótipo</b> dos descendentes.</p>
         `;
+        document.getElementById('text').style.display = "none"
+        document.getElementById('nominal').style.display = "flex"
+
       }
 
       if (btnProxElem) btnProxElem.disabled = false;
@@ -302,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function direcionar () {
+  function direcionar () { 
     if (verifica == 1) { 
       window.location = 'exercicios.html'
     }

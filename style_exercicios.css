@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bungee+Inline&display=swap');
 
+@font-face { 
+  font-family: 'SourGummy';
+  src: local(0), url("Sour_Gummy/static/SourGummy-Medium.ttf") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
 body { 
     display: flex;
     justify-content: center;
@@ -49,11 +56,10 @@ h1 {
     border: none;
     background-color: #70A1E2;
     color: black;
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     width: 36.74vw;
     height: 6.54vh;
     font-size: 2rem;
-    font-family: 'Blinker';
     font-weight: 700;
     cursor: pointer;
 }
@@ -71,7 +77,7 @@ h1 {
 }
 
 #pergunta { 
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     font-size: 4.5vh;
     font-weight: 400;
     margin-left: 4vw;
@@ -79,7 +85,7 @@ h1 {
 }
 
 .alternativas { 
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     font-size: 4vh;
     font-weight: 400;
     margin: 0;
@@ -90,7 +96,7 @@ h1 {
     display: flex;
     justify-content: center;
     font-size: 4vh;
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     background-color: #F3F3F3;
     border-radius: 100vh;
     width: 3.47vw;
@@ -183,7 +189,7 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 2vw;
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     font-size: 2vh;
     font-weight: 400;
 }
@@ -193,12 +199,11 @@ h1 {
     border: none;
     background-color: #F3F3F3;
     color: black;
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     text-align: center;
     width: 26.74vw;
     height: 6.54vh;
     font-size: 3vh;
-    font-family: 'Blinker';
     font-weight: 400;
     cursor: pointer;
     box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -210,11 +215,10 @@ h1 {
     border: none;
     background-color: #70A1E2;
     color: black;
-    font-family: 'Blinker';
     width: 36.74vw;
     height: 6.54vh;
     font-size: 3vh;
-    font-family: 'Blinker';
+    font-family: 'SourGummy';
     font-weight: 700;
     cursor: pointer;
 }

@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bungee+Inline&display=swap');
 
+@font-face { 
+  font-family: 'SourGummy';
+  src: local(0), url("Sour_Gummy/static/SourGummy-Medium.ttf") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
 html { 
   background-color: #F3F3F3;
   margin: 0;
@@ -31,12 +38,20 @@ header {
 
 /* Coluna direita rolável */
 #explicação {
-  flex: 2;
-  height: auto;
-  min-height: 100vh;
-  background-color: #fff;
-  overflow: auto;
-  min-width: 30vw;
+    flex: 2;
+    min-width: 400px;
+    max-width: 70vw;
+    height: 100vh; /* **MUDANÇA CRUCIAL: Defina uma altura fixa (ou 100vh) para o Flexbox funcionar** */
+    background-color: #F3F3F3;
+    overflow-y: auto; /* Permite que o conteúdo *dentro* dele role */
+    padding: 2vh 2vw;
+    
+    /* CONFIGURAÇÃO FLEXBOX PARA EMPURRAR BOTÕES PARA BAIXO */
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    /* REMOVA o padding de 2vh 2vw daqui e coloque-o em um wrapper interno, 
+       ou os botões também terão esse espaço. Vou deixar aqui por enquanto, 
+       mas o `padding-bottom` será um problema. */
 }
 
 #simulador {
@@ -70,14 +85,14 @@ header {
   padding: 2vh 2vw;            /* espaçamento interno */
   display: flex;
   flex-direction: column;
-  gap: 3vh;                    /* espaço entre os passos */
+
+
 }
 
 /* Cada passo */
 #explicação > div {
   display: flex;
   flex-direction: column;
-  gap: 1vh;
   width: 100%;
 }
 
@@ -88,7 +103,11 @@ header {
   box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
   border-radius: 15px;
   padding: 10px;
+  padding-top: 2px;
   font-size: 0.9rem;
+  max-height: 80vh;
+  margin-bottom: 10px; 
+  font-family: 'SourGummy';
 }
 
 
@@ -104,7 +123,7 @@ h1 {
 }
 
 label { 
-  font-family: 'Blinker';
+  font-family: 'SourGummy';
   font-size: 1.54vw;
   font-weight: 400;
   line-height: 3.03vh;
@@ -121,7 +140,7 @@ label {
 
 .custom-select {
   position: relative;
-  font-family: 'Blinker';
+  font-family: 'SourGummy';
   font-size: 1.74vw;
   
 }
@@ -138,6 +157,8 @@ label {
   cursor: pointer;
   user-select: none;
   text-align: center;
+  font-family: 'SourGummy';
+
 
 }
 
@@ -155,6 +176,7 @@ label {
   text-align: center;
   flex-shrink: 0;
   gap: 2vw;
+  font-family: 'SourGummy';
 
 }
 
@@ -257,7 +279,7 @@ label {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
-  font-family: 'Blinker';
+  font-family: 'SourGummy';
   font-size: 25px;
   color: white;
 }
@@ -317,7 +339,8 @@ table tr:last-child td:last-child {
 }
 
 p { 
-  font-size: 1.5em;
+  margin: 10px;
+  font-size: 1.3em;
   color: #666;
 }
 
@@ -355,7 +378,7 @@ p {
 }z
 
 h2 { 
-  font-family: 'Blinker';
+  font-family: 'SourGummy';
   font-size: 0.4rem;
   font-weight: 400;
   letter-spacing: 0em;
@@ -372,11 +395,12 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
-  font-family: 'Blinker';
+  font-family: 'SourGummy';
   font-size: 1.5rem;
   color: white;
   position: relative;
   bottom: 0;
+
 }
 .btns-explicacao:hover { 
   background-color: #5179ad;
@@ -396,5 +420,29 @@ h2 {
 
 #explicação > #div_btns {
   flex-direction: row;
+  flex-direction: row-reverse;
+}
+
+.text{ 
+  font-family: 'SourGummy';
+  font-weight: 400;
+  font-size: 4vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+#nominal {
+  display: none;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#title-explicacao { 
+  margin: 5px;
+}
+
+#blocoTotal {
+  display: flex;
+  justify-content: space-between;
 }
 
