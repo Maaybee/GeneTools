@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Bungee+Inline&display=swap');
+
+@font-face { 
+  font-family: 'SourGummy';
+  src: local(0), url("Sour_Gummy/static/SourGummy-Medium.ttf") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
+html { 
+  background-color: #F3F3F3;
+  margin: 0;
+  padding: 0;
+}
+
+header { 
+  display: flex;
+  margin: 0; 
+  justify-content: center;
+}
+
+/* Container das colunas */
+#row-itens {
+  display: flex;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+/* Coluna esquerda */
+#col-itens {
+  height: 100vh;          /* altura da viewport */
+  box-sizing: border-box; /* padding incluso na altura */
+  padding: 10px;     
+  flex:1;     /* opcional, só para espaçamento interno */
+}
+
+
+/* Coluna direita rolável */
+#explicação {
+    flex: 2;
+    min-width: 400px;
+    max-width: 70vw;
+    height: 100vh; /* **MUDANÇA CRUCIAL: Defina uma altura fixa (ou 100vh) para o Flexbox funcionar** */
+    background-color: #F3F3F3;
+    overflow-y: auto; /* Permite que o conteúdo *dentro* dele role */
+    padding: 2vh 2vw;
+    
+    /* CONFIGURAÇÃO FLEXBOX PARA EMPURRAR BOTÕES PARA BAIXO */
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    /* REMOVA o padding de 2vh 2vw daqui e coloque-o em um wrapper interno, 
+       ou os botões também terão esse espaço. Vou deixar aqui por enquanto, 
+       mas o `padding-bottom` será um problema. */
+}
+
+#simulador {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3.61vh;
+  /* Use max-width em vez de width fixo para permitir mais flexibilidade */
+  max-width: 45.46vw;
+  /* Deixe a largura se ajustar, se necessário */
+  width: 40vw; 
+  height: 100.06vh;
+  background-color: #ffffff;
+  border-radius: 2.74vw;
+  box-shadow: 0px 8px 80px 0px rgba(0, 0, 0, 0.25);
+  margin: 3.03vh 3.03vw;
+  /* Adicione padding lateral para espaçamento interno */
+  padding: 0 5.97vw;
+}
+
+/* Coluna direita */
+#explicação {
+  flex: 2;                     /* ocupa mais espaço que a esquerda */
+  min-width: 400px;            /* largura mínima */
+  max-width: 70vw;             /* largura máxima */
+  height: auto;
+  min-height: 100vh;
+  background-color: #F3F3F3;
+  overflow-y: auto;            /* permite rolagem vertical */
+  padding: 2vh 2vw;            /* espaçamento interno */
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+/* Cada passo */
+#explicação > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.blocos { 
+  width: 100%;                /* ocupa toda a largura do passo */
+  height: 100%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+  border-radius: 15px;
+  padding: 10px;
+  padding-top: 2px;
+  font-size: 0.9rem;
+  max-height: 80vh;
+  margin-bottom: 10px; 
+  font-family: 'SourGummy';
+}
+
+
+
+h1 { 
+  font-family: 'Bungee Inline';
+  font-size: 2.29vw;
+  font-weight: 400;
+  line-height: 4.69vh;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #000000;
+}
+
+label { 
+  font-family: 'SourGummy';
+  font-size: 1.54vw;
+  font-weight: 400;
+  line-height: 3.03vh;
+  letter-spacing: 0em;
+  text-align: start;
+  color: #000000;
+}
+
+#alinhar { 
+  display: flex;
+  flex-direction: column;
+  gap: 1.54vh;
+}
+
+.custom-select {
+  position: relative;
+  font-family: 'SourGummy';
+  font-size: 1.74vw;
+  
+}
+
+.selected-option {
+  border: none;
+  height: 6.35vh;
+  padding: 0.98vh 0.69vw;
+  border-radius: 2.74vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background: #F3F3F3;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  font-family: 'SourGummy';
+
+
+}
+
+.selected-option-cor{
+  border: none;
+  height: 6.35vh;
+  padding: 0.98vh 1.39vw;
+  border-radius: 2.74vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #F3F3F3;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  flex-shrink: 0;
+  gap: 2vw;
+  font-family: 'SourGummy';
+
+}
+
+.selected-option-cor .label {
+  /* Isso fará com que qualquer texto que exceda o espaço disponível seja cortado, 
+  mantendo a largura do contêiner estável. */
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; /* Adiciona '...' no final do texto cortado */
+  max-width: 8vw; /* Limita a largura do label */
+}
+
+#select_cor1 .options,
+#select_cor2 .options {
+  width: 100%; /* Garante que a lista de opções tenha a mesma largura fixa do pai */
+}
+
+.selected-option img {
+  width: 3.92vw;
+  height: 5.10vh;
+  flex-shrink: 0;
+  padding-left: 3.98vh;
+}
+
+.options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 110%;
+  left: 0;
+  border: 1px solid #ccc;
+  border-radius: 2.74vw;
+  background: #F3F3F3;
+  z-index: 10;
+  border: none;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 0.74vw;
+  gap: 3.98vh;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #dbdada;
+  border-radius: 1.74vw;
+
+}
+
+.option img {
+  width: 3.92vw;
+  height: 5.10vh;
+  flex-shrink: 0;
+  padding-left: 1.98vh;
+}
+
+.selected-option-cor .arrow {
+  width: 1.67vw;
+  color: #666;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.selected-option .arrow {
+  width: 1.67vw;
+  color: #666;
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+.selected-option span {
+  white-space: nowrap;
+  padding-left: 3.98vh;
+}
+
+#select_cor1, 
+#select_cor2 {
+    /* Ajuste o valor '18vw' ou '150px' conforme o tamanho ideal para seu layout. 
+       O 'vw' é bom para responsividade. */
+    width: 19vw; 
+    /* Ou, se preferir uma largura mínima para evitar quebras: */
+    /* min-width: 150px; */ 
+}
+
+
+.select-group {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+#btn {
+  display: block;
+  width: auto;
+  height: 10.35vh;
+  background-color: #F252C0;
+  border: none;
+  border-radius: 2.74vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'SourGummy';
+  font-size: 25px;
+  color: white;
+}
+
+#btn:hover {
+  background-color: #b62789;
+}
+
+/* ---------- Tabela ------------ */
+
+.table {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  width: 34.79vw;
+  height: 33.1vh;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-spacing: 0;           /* remove espaço entre células */
+  overflow: hidden;
+}
+
+td {
+  padding: 17px 25px;
+  text-align: center;
+  border: 1px solid #080000;   /* borda interna */
+}
+
+
+/* arredonda apenas os cantos externos */
+table tr:first-child td:first-child {
+  border-top-left-radius: 15px;
+}
+table tr:first-child td:last-child {
+  border-top-right-radius: 15px;
+}
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 15px;
+}
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+.tableImg { 
+  width: 10vw;
+  height: 10vh;
+  cursor: pointer; 
+  position: relative;
+}
+
+.resultados{
+  display:block
+}
+
+p { 
+  margin: 10px;
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Texto de instrução */
+.instruction-text {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+  font-style: italic;
+  text-align: center;
+}
+
+.tooltip {
+  visibility: hidden;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 2px 5px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 10;
+  bottom: -25px; /* abaixo da imagem */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+}
+
+.tableImgWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tableImgWrapper:hover .tooltip {
+  visibility: visible;
+}z
+
+h2 { 
+  font-family: 'SourGummy';
+  font-size: 0.4rem;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: start;
+  color: #000000;
+}
+
+.btns-explicacao { 
+  width: 100%;
+  height: 8.35vh;
+  background-color: #70A1E2;
+  border: none;
+  border-radius: 2.74vw;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'SourGummy';
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+  bottom: 0;
+
+}
+.btns-explicacao:hover { 
+  background-color: #5179ad;
+}
+
+.div-blocos { 
+  display: flex;
+  justify-content: center;
+}
+
+#div_btns { 
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* centraliza horizontalmente */
+  gap: 1rem; 
+}
+
+#explicação > #div_btns {
+  flex-direction: row;
+  flex-direction: row-reverse;
+}
+
+.text{ 
+  font-family: 'SourGummy';
+  font-weight: 400;
+  font-size: 4vh;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+#nominal {
+  display: none;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+#title-explicacao { 
+  margin: 5px;
+}
+
+#blocoTotal {
+  display: flex;
+  justify-content: space-between;
+}
+

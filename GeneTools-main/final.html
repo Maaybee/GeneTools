@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="style_exercicios.css">
+</head>
+<body>
+    <div id="content"> 
+        <div class="col-itens"> 
+            <div class="row-itens barra" > 
+                <h1 id="title"> RESULTADOS </h1>
+            </div>
+            <div id="container">
+                <h2 id="pergunta"> Você concluiu a lista de exercícios!! </h2>
+                    <div class="row-itens grafico"> 
+                        <div id="grafico_container"> 
+                            <div class="grafico-desempenho">
+                                <div id="valorDesempenho" class="valor-central">${acertos}/${valorMaximo}
+                                </div>
+                            </div> 
+                        </div>
+                        <div id="email-container"> 
+                            <h2 id="email-text"> Enviar questões para o email: </h2> 
+                            <input type="email" id="email-input" placeholder="Digite o seu email">
+                        </div> 
+                    </div>
+
+                <button id="btnInicio"> Voltar para o início</button>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+<script src="script_exercicios.js"> </script>
+</html>

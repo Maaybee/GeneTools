@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeneTools</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header> <img src="assets/logo.svg"> </header> 
+    <div id="row-itens">
+        <div id="col-itens"> 
+            <div id="simulador"> 
+                <h1> Simulador de Genética </h1>
+
+                <label for="animais1"> Escolha o animal: </label>
+                <div class="custom-select" id="animal-select">
+                    <div class="selected-option">
+                        <img src="assets/select_cat.svg" alt="Gato" />
+                        <span class="label">Gato</span>
+                        <img src="assets/arrow.svg" class="arrow">
+                    </div>
+                    <div class="options">
+                        <div class="option" data-value="gato">
+                            <img src="assets/select_cat.svg" alt="Gato" />
+                            <span class="label">Gato</span>
+                        </div>
+                        <div class="option" data-value="cachorro">
+                            <img src="assets/select_dog.svg" alt="Cachorro" />
+                            <span class="label">Cachorro</span>
+                        </div>
+                        <div class="option" data-value="coelho">
+                            <img src="assets/select_bunny.svg" alt="Coelho" />
+                            <span class="label">Coelho</span>
+                        </div>
+                    </div>
+                </div> 
+                
+                <label for="select_variacao"> Escolha as cores/Alelos:</label>
+                <div class="select-group"> 
+                    <div class="custom-select" id="select_cor1"> 
+                        <div class="selected-option-cor" class="selects_cor">
+                            <img src="assets/yellow.svg" alt="Amarelo" />
+                            <span class="label"> Amarelo </span>
+                            <img src="assets/arrow.svg" class="arrow">
+                        </div>
+                        <div class="options">
+                            <div class="option" data-value="amarelo">
+                                <img src="assets/yellow.svg" alt="Amarelo" />
+                                <span class="label">Amarelo/AA</span>
+                            </div>
+                            <div class="option" data-value="preto">
+                                <img src="assets/gray.svg" alt="Preto" />
+                                <span class="label">Cinza/Aa</span>
+                            </div>
+                            <div class="option" data-value="marrom">
+                                <img src="assets/brown.svg" alt="Marrom" />
+                                <span class="label">Marrom/aa</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="custom-select" id="select_cor2"> 
+                        <div class="selected-option-cor" class="selects_cor">
+                            <img src="assets/yellow.svg" alt="Amarelo" />
+                            <span class="label"> Amarelo </span>
+                            <img src="assets/arrow.svg" class="arrow">
+                        </div>
+                        <div class="options">
+                            <div class="option" data-value="amarelo">
+                                <img src="assets/yellow.svg" alt="Amarelo" />
+                                <span class="label">Amarelo/AA</span>
+                            </div>
+                            <div class="option" data-value="preto">
+                                <img src="assets/gray.svg" alt="Preto" />
+                                <span class="label">Cinza/Aa</span>
+                            </div>
+                            <div class="option" data-value="marrom">
+                                <img src="assets/brown.svg" alt="Marrom" />
+                                <span class="label">Marrom/aa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="btn">Combinar</button>
+
+                <div class="table static-table"> 
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div> 
+            </div> 
+        </div> 
+        <div id="explicação"> 
+
+            <h1 id="title-explicacao"> EXPLICAÇÃO </h1>
+
+            <div id="blocoTotal"> 
+                <div class="bloco-explicacao"> 
+                    <h2 id="nominal"> 1º Passo </h2>
+                    <div class="blocos"> 
+                        <div id="text"> 
+                            <h2 class="text"> O simulador <b>GeneTools</b> foi criado com o propósito de 
+                                facilitar o ensino de genética no ensino básico, sendo 
+                                uma ferramenta para os docentes. 
+                            </h2>
+                            <h2 class="text"> Para isso, são utilizados recursos visuais e explicações
+                                por passos e blocos
+                            </h2>
+                            <h2 class="text"> Clique em <b> combinar</b> e descubra mais</h2>
+                        </div>
+
+                        <div id="passo1"> 
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <div id="div_btns"> 
+                    <button id="btn-prox" class="btns-explicacao"> Próximo passo </button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
