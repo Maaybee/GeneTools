@@ -67,11 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!btnAnterior && divBtns) {
     btnAnterior = document.createElement("button");
     btnAnterior.id = "btn-ant";
-    // Corrigido: O texto deve ser "Passo Anterior" ou similar
     btnAnterior.textContent = "Passo Anterior"; 
     btnAnterior.classList.add("btns-explicacao");
     btnAnterior.style.display = "none";
-    // ANEXA ANTERIOR PRIMEIRO (Fica à esquerda)
     divBtns.appendChild(btnAnterior); 
   }
 
@@ -79,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
     btnProxElem = document.createElement("button");
     btnProxElem.id = "btn-prox";
     btnProxElem.textContent = "Próximo passo";
-    // ANEXA PRÓXIMO DEPOIS (Fica à direita)
     divBtns.appendChild(btnProxElem); 
   }
 
